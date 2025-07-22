@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   // Set base path for GitHub Pages deployment
-  base: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/small-messenger/' : '/',
   plugins: [
     react(),
     VitePWA({
@@ -17,8 +17,8 @@ export default defineConfig({
         theme_color: '#007AFF',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
-        start_url: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
+        scope: process.env.NODE_ENV === 'production' ? '/small-messenger/' : '/',
+        start_url: process.env.NODE_ENV === 'production' ? '/small-messenger/' : '/',
         icons: [
           {
             src: 'pwa-192x192.png',

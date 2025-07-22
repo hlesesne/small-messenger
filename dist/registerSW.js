@@ -1,1 +1,1 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/pwa-imessage/sw.js', { scope: '/pwa-imessage/' })})}
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/small-messenger/sw.js', { scope: '/small-messenger/' })})}
