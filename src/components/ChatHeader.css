@@ -1,0 +1,123 @@
+.chat-header {
+  background-color: rgba(248, 248, 248, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  min-height: 88px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #007AFF;
+  padding: 8px;
+  margin-left: -8px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007AFF, #5AC8FA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-initials {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.contact-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1px;
+}
+
+.contact-status {
+  font-size: 13px;
+  color: #8E8E93;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  color: #007AFF;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .chat-header {
+    background-color: rgba(28, 28, 30, 0.8);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .contact-name {
+    color: #FFFFFF;
+  }
+  
+  .contact-status {
+    color: #8E8E93;
+  }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  .chat-header {
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+}

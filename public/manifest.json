@@ -1,0 +1,26 @@
+{
+  "name": "iMessage Chat",
+  "short_name": "iMessage",
+  "description": "A secure messaging interface powered by AI",
+  "theme_color": "#007AFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "portrait",
+  "categories": ["productivity", "communication"],
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

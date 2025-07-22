@@ -1,0 +1,311 @@
+.conversation-list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+}
+
+.conversation-list-header {
+  background-color: rgba(248, 248, 248, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  min-height: 88px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left,
+.header-right {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.conversation-list-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.settings-button,
+.new-conversation-button {
+  background: none;
+  border: none;
+  color: #007AFF;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-button:hover,
+.new-conversation-button:hover {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.conversations-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  gap: 12px;
+}
+
+.conversation-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.conversation-item:active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.conversation-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007AFF, #5AC8FA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-initials {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.conversation-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.conversation-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.conversation-time {
+  font-size: 14px;
+  color: #8E8E93;
+  flex-shrink: 0;
+}
+
+.conversation-preview {
+  font-size: 14px;
+  color: #8E8E93;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #FF3B30;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+}
+
+.conversation-item:hover .delete-button {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.delete-button:hover {
+  background-color: rgba(255, 59, 48, 0.1);
+}
+
+.delete-button:active {
+  background-color: rgba(255, 59, 48, 0.2);
+  transform: scale(0.95);
+}
+
+.conversation-chevron {
+  color: #C7C7CC;
+  flex-shrink: 0;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.conversation-item:hover .conversation-chevron {
+  transform: translateX(-4px);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  color: #8E8E93;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.empty-state h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #8E8E93;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .conversation-list {
+    background-color: #000000;
+  }
+  
+  .conversation-list-header {
+    background-color: rgba(28, 28, 30, 0.8);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .conversation-list-header h1 {
+    color: #FFFFFF;
+  }
+  
+  .conversation-item {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .conversation-item:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+  
+  .conversation-item:active {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .conversation-title {
+    color: #FFFFFF;
+  }
+  
+  .conversation-preview {
+    color: #8E8E93;
+  }
+  
+  .conversation-time {
+    color: #8E8E93;
+  }
+  
+  .conversation-chevron {
+    color: #48484A;
+  }
+  
+  .empty-state h2 {
+    color: #FFFFFF;
+  }
+  
+  .empty-state p {
+    color: #8E8E93;
+  }
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+  .conversation-list-header {
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+}
+
+/* Smooth scrolling for iOS */
+.conversations-container {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile/Touch support for delete button */
+@media (max-width: 768px) {
+  .delete-button {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .conversation-item:hover .conversation-chevron {
+    transform: none;
+  }
+  
+  .conversation-actions {
+    gap: 8px;
+  }
+}
+
+/* Larger tap targets for mobile */
+@media (max-width: 768px) {
+  .conversation-item {
+    padding: 16px;
+  }
+  
+  .delete-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

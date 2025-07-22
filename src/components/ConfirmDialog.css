@@ -1,0 +1,112 @@
+.confirm-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.confirm-dialog {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.15);
+}
+
+.confirm-dialog-content {
+  padding: 20px 20px 16px;
+  text-align: center;
+}
+
+.confirm-dialog-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.confirm-dialog-message {
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.4;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.confirm-dialog-actions {
+  display: flex;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.confirm-dialog-button {
+  flex: 1;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+  color: #007AFF;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.confirm-dialog-button:first-child {
+  border-right: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.confirm-dialog-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.confirm-dialog-button:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.confirm-dialog-button.cancel {
+  font-weight: 600;
+}
+
+.confirm-dialog-button.destructive {
+  color: #FF3B30;
+  font-weight: 400;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .confirm-dialog {
+    background-color: rgba(28, 28, 30, 0.9);
+  }
+  
+  .confirm-dialog-title {
+    color: #FFFFFF;
+  }
+  
+  .confirm-dialog-message {
+    color: #FFFFFF;
+  }
+  
+  .confirm-dialog-actions {
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .confirm-dialog-button:first-child {
+    border-right: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .confirm-dialog-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .confirm-dialog-button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

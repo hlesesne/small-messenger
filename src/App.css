@@ -1,0 +1,142 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.api-key-prompt {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.api-key-modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.api-key-modal h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.api-key-modal p {
+  font-size: 14px;
+  color: #8E8E93;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.api-key-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #D1D1D6;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.api-key-input:focus {
+  border-color: #007AFF;
+}
+
+.save-key-button {
+  background-color: #007AFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-key-button:hover {
+  background-color: #0056CC;
+}
+
+.save-key-button:disabled {
+  background-color: #8E8E93;
+  cursor: not-allowed;
+}
+
+.api-key-help {
+  font-size: 12px !important;
+  margin-top: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+.api-key-help a {
+  color: #007AFF;
+  text-decoration: none;
+}
+
+.api-key-help a:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .app {
+    background-color: #000000;
+  }
+  
+  .api-key-modal {
+    background-color: #1C1C1E;
+  }
+  
+  .api-key-modal h2 {
+    color: #FFFFFF;
+  }
+  
+  .api-key-modal p {
+    color: #8E8E93;
+  }
+  
+  .api-key-input {
+    background-color: #2C2C2E;
+    border-color: #38383A;
+    color: #FFFFFF;
+  }
+  
+  .api-key-input:focus {
+    border-color: #007AFF;
+  }
+}
+
+/* Prevent zoom on input focus (iOS Safari) */
+@media screen and (max-width: 768px) {
+  .api-key-input {
+    font-size: 16px;
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: max(0px)) {
+  .app {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
