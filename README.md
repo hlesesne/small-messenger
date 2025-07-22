@@ -1,6 +1,6 @@
 # iMessage-Style ChatGPT PWA
 
-A Progressive Web App that replicates the visual and interactive style of iMessage while providing a seamless interface to ChatGPT. Perfect for discreet AI assistance in public spaces.
+A Progressive Web App that replicates the visual and interactive style of iMessage while providing a seamless interface to ChatGPT. 
 
 ## Features
 

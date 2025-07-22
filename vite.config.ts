@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  // Set base path for GitHub Pages deployment
+  base: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
   plugins: [
     react(),
     VitePWA({
@@ -11,12 +13,12 @@ export default defineConfig({
       manifest: {
         name: 'iMessage Chat',
         short_name: 'iMessage',
-        description: 'A secure messaging interface',
+        description: 'A secure messaging interface powered by AI',
         theme_color: '#007AFF',
         background_color: '#ffffff',
         display: 'standalone',
-        scope: '/',
-        start_url: '/',
+        scope: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
+        start_url: process.env.NODE_ENV === 'production' ? '/pwa-imessage/' : '/',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -31,5 +33,18 @@ export default defineConfig({
         ]
       }
     })
-  ]
+  ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          markdown: ['react-markdown']
+        }
+      }
+    }
+  }
 })
