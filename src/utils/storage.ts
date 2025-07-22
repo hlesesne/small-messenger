@@ -1,4 +1,4 @@
-import { Conversation, Message } from '../types';
+import { Conversation } from '../types';
 
 const STORAGE_KEYS = {
   CONVERSATIONS: 'pwa_imessage_conversations',

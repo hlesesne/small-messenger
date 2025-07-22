@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChatHeader } from './components/ChatHeader';
 import { ChatView } from './components/ChatView';
 import { MessageInput } from './components/MessageInput';
 import { ConversationList } from './components/ConversationList';
 import { Settings } from './components/Settings';
 import { useChat } from './hooks/useChat';
-import { getStoredApiKey, storeApiKey } from './utils/chatgpt';
+import { } from './utils/chatgpt';
 import { testLocalStorage } from './utils/storage';
-import { isLocalEndpoint } from './utils/settings';
+import {  } from './utils/settings';
 import './App.css';
 
 function App() {
@@ -16,11 +16,9 @@ function App() {
     currentConversation, 
     sendMessage, 
     isLoading, 
-    createConversation, 
     selectConversation,
     deleteConversation,
     hasApiKey,
-    settings,
     updateSettings,
     settingsLoaded
   } = useChat();
@@ -71,7 +69,7 @@ function App() {
   };
 
   const handleNewChat = () => {
-    const newConv = createConversation();
+    // const newConv = createConversation();
     setShowConversationList(false);
   };
 

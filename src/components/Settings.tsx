@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppSettings, COMMON_MODELS, COMMON_ENDPOINTS } from '../types';
+import { AppSettings, COMMON_ENDPOINTS } from '../types';
 import { loadSettings, saveSettings, validateEndpoint, isLocalEndpoint } from '../utils/settings';
 import { fetchAvailableModels, getDefaultModelsForEndpoint } from '../utils/modelFetcher';
 import './Settings.css';
